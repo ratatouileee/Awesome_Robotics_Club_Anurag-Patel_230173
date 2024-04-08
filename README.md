@@ -1,2 +1,0 @@
-# Awesome_Robotics_Club_Anurag-Patel_230173
-Robotics project repository
