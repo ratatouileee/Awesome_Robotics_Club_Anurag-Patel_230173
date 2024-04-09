@@ -1,0 +1,27 @@
+import heapq
+
+def is_valid(x, y, grid):
+    return 0 <= x < len(grid) and 0 <= y < len(grid[0]) and grid[x][y] != 0
+
+def shortest_path(grid, start, end):
+    directions = [(0, 1), (0, -1), (1, 0), (-1, 0)]
+    pq = [(0, start)]
+    visited = set()
+    while pq:
+        dist, curr = heapq.heappop(pq)
+        if curr == end:
+            return dist
+        if curr in visited:
+            continue
+        visited.add(curr)
+        for dx, dy in directions:
+            x, y = curr[0] + dx, curr[1] + dy
+            if is_valid(x, y, grid):
+                heapq.heappush(pq, (dist + 1, (x, y)))
+    return -1  
+grid = [[1,0,1,1,0],[1,0,0,1,1],[1,1,1,1,1],[1,0,1,0,1],[1,1,1,0,1]]
+start = (0, 0)
+end = (4, 4)
+
+path_length = shortest_path(grid, start, end)
+print("Shortest path length:", path_length)
