@@ -1,0 +1,1 @@
+I am highly interested in autonomous navigation and path planning. The use of Machine Learning to find the best and optimal path inetrests me. I also want to learn using ROS which I think this project would be ideal for.
